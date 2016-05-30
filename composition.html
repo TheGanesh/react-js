@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My First React page</title>
+    <script src="https://fb.me/react-15.1.0.js"></script>
+    <script src="https://fb.me/react-dom-15.1.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+<div class="row">
+    <div class="col-sm-5">
+         <div class="target">
+         </div>
+
+    </div>
+</div>
+</div>
+</body>
+</html>
+
+<script type="text/babel">
+    //Creating react component class
+    var Badge = React.createClass({
+        render : function(){
+            return  <button className="btn btn-primary" type="button">
+                    {this.props.title} <span className="badge">{this.props.number}</span>
+                    </button>
+        }
+    });
+
+    var Thumbnail = React.createClass({
+        render : function(){
+            return   <div className="thumbnail">
+                         <img src={this.props.imageUrl}/>
+                         <div className="caption">
+                           <h3>{this.props.label}</h3>
+                           <p>{this.props.description}</p>
+                           <p>
+                             <Badge title={this.props.title} number={this.props.number}/>
+                          </p>
+                         </div>
+                     </div>
+        }
+    });
+
+    var options ={
+        label:"Thumbnail label",
+        description:"This is a composition exmaple using react js",
+        imageUrl:"https://assets.toptal.io/uploads/blog/category/logo/291/react.png",
+        title:"Inbox",
+        number:"5"
+
+    };
+    //Instantiating component
+    var element = React.createElement(Thumbnail,options);
+
+    //Rendering instantiated component
+    ReactDOM.render(element,document.querySelector(".target"));
+
+</script>
