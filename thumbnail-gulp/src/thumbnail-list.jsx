@@ -1,4 +1,7 @@
-var ThumbnailList = React.createClass({
+var React = require('react');
+var Thumbnail = require('./thumbnail.jsx');
+
+module.exports = React.createClass({
 
     render: function () {
 

@@ -1,6 +1,8 @@
-var options ={
+var React = require('react');
+var ThumbnailList = require('./thumbnail-list.jsx');
 
-    thumbnailData:     [
+var options = {
+    thumbnailData: [
         {
             label: "React JS",
             description: "This is React JS logo",
@@ -14,13 +16,12 @@ var options ={
             imageUrl: "https://angular.io/resources/images/logos/standard/shield-large.png",
             title: "Inbox",
             number: "5"
-
         }
+    ]
+};
 
-
-    ]};
 //Instantiating component
-var element = React.createElement(ThumbnailList,options);
+var element = React.createElement(ThumbnailList, options);
 
-//Rendering instantiated component
-ReactDOM.render(element,document.querySelector(".target"));
+//Rendering instantiated component ReactDOM for new version
+React.render(element, document.querySelector(".target"));
