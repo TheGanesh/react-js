@@ -3,7 +3,7 @@ var Dropdown = require('./dropdown.jsx');
 
 var options = {
 
-    title: "Choose your dessert",
+    title: "Select Desert",
     entries: [
         "Apple pie",
         "whatever 1",
